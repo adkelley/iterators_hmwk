@@ -4,22 +4,46 @@
 
 (function(){
 
-    this.myUtils = {}
+  this.myUtils = {};
 
-    myUtils = {}
+  myUtils = {};
 
-    myUtils.myEach = function myEach(arr, cb){
-        var len = arr.length;
-        for(var i=0; i<len; i++){
-            cb(arr[i], i, arr);
-        }
+  myUtils.myEach = function myEach(arr, cb){
+    var len = arr.length;
+    for(var i=0; i<len; i++){
+      cb(arr[i], i, arr);
     }
-    // myUtils.myMap
-    // myUtils.myReduce
+  }
+
+  myUtils.myMap = function myMap(arr, cb) {
+    var outArr = [];
+    var len = arr.length;
+
+    for (var i=0; i<len; i++) {
+      outArr[i] = cb(arr[i], i, arr);
+    }
     
-    // myUtils.buildElement
+    return outArr;
+  }
+
+  myUtils.myReduce = function myReduce(arr, cb, val) {
+    var len = arr.length;
+    val = val || 0;
+    for(var i=0; i<len; i++){
+      val = cb(val, arr[i], i, arr)
+    }
+    return val;
+  }
+
+  myUtils.buildElement = function buildElement(tag, words) {
+    return "<"+tag+">"+words+"</"+tag+">";
+  }
     
-    // myUtils.toDollarAmount;
-    // myUtils.toCurrencyString;
+  myUtils.toDollarAmount(amount) {
+    }
+
+  myUtils.toCurrencyString(amount, currency) {
+    return currency + amount.toString();
+  }
     
 }.call(this))
