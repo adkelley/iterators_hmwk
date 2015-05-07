@@ -39,11 +39,13 @@
     return "<"+tag+">"+words+"</"+tag+">";
   }
     
+/*
   myUtils.toDollarAmount(amount) {
     }
 
   myUtils.toCurrencyString(amount, currency) {
     return currency + amount.toString();
   }
+*/
     
 }.call(this))

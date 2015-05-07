@@ -58,20 +58,23 @@ function updateItems() {
     return v;
   });
 
+
   function compare(a, b) {
-    if (a.description > b.description) {
+    if (a.description.charAt(0) > b.description.charAt(0)) {
       return 1;
     }
-    if (a.description < b.description) {
+    if (a.description.charAt(0) < b.description.charAt(0)) {
       return -1;
     }
     // a must be equal to b
     return 0;
   };
 
+
   line_items = fixCharacters.sort(function(a, b) {
     compare(a, b);
   });
+
 
   myUtils.myEach(line_items, function(v,i){
     addItem(v.price, v.description, v.qty);
